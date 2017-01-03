@@ -1,0 +1,31 @@
+[user]
+	name = Cory Donnelly
+	email = cory.donnelly@gmail.com
+[color]
+	ui = true
+[http]
+	sslverify = true
+[content]
+[merge]
+	tool = extMerge
+[mergetool "extMerge"]
+	cmd = extMerge \\\"$BASE\\\" \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$MERGED\\\"
+	trustExitCode = false
+[diff]
+	external = extDiff
+[alias]
+	unstage = reset HEAD --
+	discard = checkout  --
+	last = log -1 HEAD
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[push]
+	default = simple
+[credential]
+	helper = cache
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[https]
+[fetch]
+	prune = true
